@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+
+app.tar.gz
+
+apps/pocketbase/pb_data/*
+!apps/pocketbase/pb_data/types.d.ts

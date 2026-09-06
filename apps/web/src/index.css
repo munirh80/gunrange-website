@@ -1,0 +1,108 @@
+/*
+  TEMPLATE STYLES: These styles are used as a base template.
+  AI is allowed to modify these styles as needed.
+*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  overflow-x: clip;
+}
+
+.font-display {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 177.78vh;
+  min-height: 56.25vw;
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+/*
+  ---break---
+*/
+
+/* Steel-blue theme overrides the original sage-green palette while preserving component structure. */
+[class~="bg-[#40554f]"] { background-image: linear-gradient(110deg, #3a4757, #5d7186, #3a4757) !important; }
+[class~="hover:bg-[#35473f]"]:hover { background-color: #2f3a47 !important; }
+[class~="bg-[#4a6b66]"], [class~="bg-[#2f3b3a]"] { background-color: #46586b !important; }
+[class~="text-[#40554f]"], [class~="text-[#4a6b66]"], [class~="text-[#2f3b3a]"], [class~="text-[#5c6a58]"] { color: #46586b !important; }
+[class~="text-[#9fc3bd]"] { color: #8fa3b8 !important; }
+[class~="border-[#40554f]"] { border-color: #46586b !important; }
+[class~="ring-[#4a6b66]\/40"] { --tw-ring-color: rgb(70 88 107 / 0.4) !important; }
+[class~="bg-[#eef3ee]"], [class~="bg-[#f4f7f3]"], [class~="bg-[#f8faf7]"] { background-color: #eef2f6 !important; }
+[class~="bg-[#e9efe6]"] { background-color: #e3e9ee !important; }
+[class~="border-[#e4eae4]"], [class~="border-[#d5ddd5]"], [class~="ring-[#d5ddd5]"] { border-color: #d4dde4 !important; }
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
