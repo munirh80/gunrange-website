@@ -15,5 +15,8 @@
   },
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "dependencies": {
+    "browserslist": "^4.28.9"
+  }
 }
