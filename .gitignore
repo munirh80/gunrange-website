@@ -7,5 +7,9 @@ dist/
 
 app.tar.gz
 
+# PocketBase binary — download via setup / apps/pocketbase download script
+apps/pocketbase/pocketbase
+apps/pocketbase/pocketbase.exe
+
 apps/pocketbase/pb_data/*
 !apps/pocketbase/pb_data/types.d.ts
