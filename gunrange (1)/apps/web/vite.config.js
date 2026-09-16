@@ -402,17 +402,42 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
-	build: {
-		rollupOptions: {
-			external: [
-				'@babel/parser',
-				'@babel/traverse',
-				'@babel/generator',
-				'@babel/types'
-			],
-			checks: {
-				pluginTimings: false,
-			}
-		}
-	}
+  build: {
+    rollupOptions: {
+      external: [
+        '@babel/parser',
+        '@babel/traverse',
+        '@babel/generator',
+        '@babel/types'
+      ],
+      output: {
+        manualChunks(id) {
+          // React core
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'vendor-react';
+          }
+          // React Router
+          if (id.includes('node_modules/react-router')) {
+            return 'vendor-router';
+          }
+          // Radix + UI components (biggest bloat)
+          if (id.includes('@radix-ui') || id.includes('src/components/ui')) {
+            return 'vendor-ui';
+          }
+          // Charts
+          if (id.includes('recharts')) {
+            return 'vendor-charts';
+          }
+          // Animations
+          if (id.includes('framer-motion')) {
+            return 'vendor-motion';
+          }
+          // Forms
+          if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
+            return 'vendor-forms';
+          }
+        }
+      }
+    }
+  }
 });
