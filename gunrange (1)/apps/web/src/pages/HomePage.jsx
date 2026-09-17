@@ -171,10 +171,10 @@ function RangeMap({ results, activeId, onSelect, center, miles }) {
         {scale < 1.8 && (
           <>
             {(() => { const s = screen(39.45, -76.6); return inView(s) ? (
-              <text x={s.x} y={s.y} fontSize="20" letterSpacing="7" fill="#8492a6" fontWeight="600" fontFamily="'DM Sans', sans-serif" textAnchor="middle">MARYLAND</text>
+				<text x={s.x} y={s.y} fontSize="20" letterSpacing="7" fill="#46586b" fontWeight="600" fontFamily="'DM Sans', sans-serif" textAnchor="middle">MARYLAND</text>
             ) : null; })()}
             {(() => { const s = screen(38.5, -77.5); return inView(s) ? (
-              <text x={s.x} y={s.y} fontSize="20" letterSpacing="7" fill="#8492a6" fontWeight="600" fontFamily="'DM Sans', sans-serif" textAnchor="middle">VIRGINIA</text>
+				<text x={s.x} y={s.y} fontSize="20" letterSpacing="7" fill="#46586b" fontWeight="600" fontFamily="'DM Sans', sans-serif" textAnchor="middle">VIRGINIA</text>
             ) : null; })()}
           </>
         )}
@@ -185,8 +185,8 @@ function RangeMap({ results, activeId, onSelect, center, miles }) {
           if (!inView(s)) return null;
           return (
             <g key={c.name}>
-              <circle cx={s.x} cy={s.y} r="2.5" fill="#6b7a8e" />
-              <circle cx={s.x} cy={s.y} r="5" fill="none" stroke="#6b7a8e" strokeWidth="0.8" opacity="0.5" />
+				<circle cx={s.x} cy={s.y} r="2.5" fill="#46586b" />
+				<circle cx={s.x} cy={s.y} r="5" fill="none" stroke="#46586b" strokeWidth="0.8" opacity="0.5" />
               <text
                 x={s.x + 8}
                 y={s.y + 4}

@@ -37,7 +37,17 @@ body {
 [class~="bg-[#40554f]"] { background-image: linear-gradient(110deg, #3a4757, #5d7186, #3a4757) !important; }
 [class~="hover:bg-[#35473f]"]:hover { background-color: #2f3a47 !important; }
 [class~="bg-[#4a6b66]"], [class~="bg-[#2f3b3a]"] { background-color: #46586b !important; }
-[class~="text-[#40554f]"], [class~="text-[#4a6b66]"], [class~="text-[#2f3b3a]"], [class~="text-[#5c6a58]"] { color: #46586b !important; }
+[class~="text-[#40554f]"],
+[class~="text-[#4a6b66]"],
+[class~="text-[#2f3b3a]"],
+[class~="text-[#2f3a47]"],
+[class~="text-[#5c6a58]"],
+[class~="text-[#8a968c]"],
+[class*="text-[#8a968c]"],
+[class*="text-[#5c6a58]"],
+[class~="text-[#9aa894]"] {
+  color: #46586b !important;
+}
 [class~="text-[#9fc3bd]"] { color: #8fa3b8 !important; }
 [class~="border-[#40554f]"] { border-color: #46586b !important; }
 [class~="ring-[#4a6b66]\/40"] { --tw-ring-color: rgb(70 88 107 / 0.4) !important; }
