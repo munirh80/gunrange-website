@@ -1,0 +1,13 @@
+{
+    "workbench.editor.alwaysShowEditorActions": true,
+    "workbench.editor.autoLockGroups": {
+        "default": true,
+        "antigravity.globalArtifactsEditorInput": true
+    },
+    "editor.editContext": true,
+    "files.exclude": {
+        "**/.git": false
+    },
+    "search.useGlobalIgnoreFiles": true,
+    "search.useParentIgnoreFiles": true
+}
