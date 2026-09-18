@@ -45,6 +45,27 @@ body {
 [class~="bg-[#e9efe6]"] { background-color: #e3e9ee !important; }
 [class~="border-[#e4eae4]"], [class~="border-[#d5ddd5]"], [class~="ring-[#d5ddd5]"] { border-color: #d4dde4 !important; }
 
+/* Map marker selection pulse */
+@keyframes markerPulse {
+  0%   { transform: scale(0.55); opacity: 0.55; }
+  70%  { opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+.marker-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: markerPulse 1.9s ease-out infinite;
+}
+
+/* SVG marker groups are keyboard-accessible, but should not show the browser's blue focus box after a click. */
+.range-map-marker,
+.range-map-marker:focus {
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marker-pulse { animation: none; opacity: 0; }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

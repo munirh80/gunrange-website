@@ -239,7 +239,10 @@ window.fetch = function(...args) {
 				contentType.includes('text/html') ||
 				contentType.includes('application/xhtml+xml');
 
-			if (!response.ok && !isDocumentResponse) {
+			// no-cors requests (e.g. Google Analytics/Ads beacons) always return an opaque
+			const isOpaqueResponse = response.type === 'opaque';
+
+			if (!response.ok && !isDocumentResponse && !isOpaqueResponse) {
 					const responseClone = response.clone();
 					const errorFromRes = await responseClone.text();
 					const requestUrl = response.url;

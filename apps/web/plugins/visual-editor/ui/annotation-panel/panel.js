@@ -2,7 +2,7 @@ import { ANNOTATION_PANEL_HTML } from './template.js';
 import { ANNOTATION_PANEL_STYLES } from './styles.js';
 import { addAnnotationMarker, removeMarker, unhighlightAllMarkers } from './annotation-markers.js';
 import { lockHoverOutline, unlockHoverOutline } from '../overlays/hover-outline.js';
-import { isInFixedContext, getElementType } from '../../utils/dom-utils.js';
+import { isInFixedContext, getElementType, isolateEditorUiEvents } from '../../utils/dom-utils.js';
 import { captureElementMetadata } from '../../utils/selection-mode-metadata.js';
 import { PANEL_GAP, PANEL_MARGIN, PARENT_TOOLBAR_HEIGHT, ANNOTATION_PANEL_WIDTH, ANNOTATION_PANEL_ESTIMATED_HEIGHT, MAX_ANNOTATION_ATTACHMENTS, TOOLTIP_VIEWPORT_MARGIN } from '../../constants/layout.js';
 import {
@@ -105,8 +105,7 @@ function ensurePanelElement() {
 		postToParent(ParentMessage.ANNOTATION_IMAGE_ATTACH_REQUESTED);
 	});
 
-	_annotationPanelEl.addEventListener('keydown', stopHostPageKeyPropagation);
-	_annotationPanelEl.addEventListener('keyup', stopHostPageKeyPropagation);
+	isolateEditorUiEvents(_annotationPanelEl);
 
 	return _annotationPanelEl;
 }
@@ -502,10 +501,6 @@ export function getAnnotationPanelEl() {
 }
 
 
-function stopHostPageKeyPropagation(event) {
-	event.stopPropagation();
-}
-
 function attachPanelKeydown() {
 	detachPanelKeydown();
 	_panelKeydownHandler = (event) => {
@@ -515,12 +510,12 @@ function attachPanelKeydown() {
 			hideAnnotationPanel();
 		}
 	};
-	document.addEventListener('keydown', _panelKeydownHandler, true);
+	window.addEventListener('keydown', _panelKeydownHandler, true);
 }
 
 function detachPanelKeydown() {
 	if (_panelKeydownHandler) {
-		document.removeEventListener('keydown', _panelKeydownHandler, true);
+		window.removeEventListener('keydown', _panelKeydownHandler, true);
 		_panelKeydownHandler = null;
 	}
 }

@@ -3,5 +3,4 @@
 - [Firearms Law Updates & Second Amendment Rights | Maryland, Virginia & DC](/firearms-law): Follow major firearms law updates and Second Amendment developments affecting Maryland, Virginia, and Washington, DC. Review official sources and practical summaries.
 - [Owner Login | DMV Ranges](/login): Owner login for the DMV Ranges approval dashboard to review and approve submitted shooting range listings.
 - [Range Not Found | DMV Ranges](/ranges/:slug): The shooting range you were looking for could not be found. Browse the full DMV directory of ranges in Maryland, Virginia, and near Washington, DC.
-- [Shooting Ranges in Maryland, Virginia & DC | DMV Ranges](/): Find shooting ranges in Maryland, Virginia, and Washington, DC. Compare locations, range types, services, hours, training, rentals, and visitor requirements.
 - [Untitled Page](/washington-dc): No description available
